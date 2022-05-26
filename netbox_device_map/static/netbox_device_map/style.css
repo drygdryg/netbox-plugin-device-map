@@ -1,0 +1,23 @@
+.text-toggle[aria-expanded=false] .text-expanded {
+  display: none;
+}
+.text-toggle[aria-expanded=true] .text-collapsed {
+  display: none;
+}
+
+.sidebar-device-type {
+  color: #6c757d;
+}
+
+.sidebar-device-role {
+  font-size: .9rem;
+  color: #6c757d;
+}
+
+.leaflet-sidebar > .close {
+  text-decoration: none
+}
+
+.sidebar-cpe-list li {
+  list-style-type: decimal;
+}
