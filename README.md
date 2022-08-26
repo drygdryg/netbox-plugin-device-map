@@ -5,33 +5,42 @@ A simple device map plugin with filtering criteria for NetBox
 ![Map filters screenshot](docs/images/screenshot_map_filters.png)
 
 ## Installation
-1. Download plugin distribution from releases.
-2. If your NetBox installation uses virtualenv, activate it like this:
+1. If your NetBox installation uses virtualenv, activate it like this:
 ```
 source /opt/netbox/venv/bin/activate
 ```
-3. Install the plugin from the distribution:
-```
-sudo pip install /path/to/netbox-plugin-device-map.tar.gz
-```
-4. Add plugin to `local_requirements.txt`:
+
+2. Install the plugin.
 
 To ensure plugin is automatically re-installed during future NetBox upgrades, create a file named `local_requirements.txt` (if not already existing) in the NetBox root directory
 and list the `nextbox-plugin-device-map` package:
+  - Option A: if you want to install it from PyPI:
+```
+echo netbox-plugin-device-map | sudo tee -a /opt/netbox/local_requirements.txt
+```
+  - Option B: if you manually downloaded the plugin distribution from releases:
 ```
 echo "/path/to/netbox-plugin-device-map.tar.gz" | sudo tee -a /opt/netbox/local_requirements.txt
 ```
-5. Collect static files:
+Then run:
+```
+sudo pip install -U -r /opt/netbox/local_requirements.txt
+```
+to install the plugin.
+
+3. Collect static files:
 ```
 sudo python /opt/netbox/netbox/manage.py collectstatic
 ```
-6. To enable plugin, add the plugin's name to the PLUGINS list in `configuration.py` (it's usually located in `/opt/netbox/netbox/netbox/`) like so:
+
+4. To enable plugin, add the plugin's name to the PLUGINS list in `configuration.py` (it's usually located in `/opt/netbox/netbox/netbox/`) like so:
 ```
 PLUGINS = [
     'netbox_device_map'
 ]
 ```
-7. Restart NetBox WSGI service to apply changes:
+
+5. Restart NetBox WSGI service to apply changes:
 ```
 sudo systemctl restart netbox
 ```

@@ -4,7 +4,7 @@ from extras.plugins import PluginConfig
 class DeviceMapConfig(PluginConfig):
     name = 'netbox_device_map'
     verbose_name = 'Device map'
-    version = '0.1.1'
+    version = '0.1.2'
     author = 'Victor Golovanenko'
     author_email = 'drygdryg2014@yandex.com'
     base_url = 'device-map'
