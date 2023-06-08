@@ -5,6 +5,11 @@ A simple device map plugin with filtering criteria for NetBox
 ![Map filters screenshot](docs/images/screenshot_map_filters.png)
 
 ## Installation
+### Requirements
+The plugin has been tested and confirmed works on NetBox versions from 3.2 to 3.5 and Python versions from 3.10 to 3.11.
+
+### Steps
+
 1. If your NetBox installation uses virtualenv, activate it like this:
 ```
 source /opt/netbox/venv/bin/activate
@@ -84,7 +89,7 @@ Custom tiles layer settings:
 | Setting      | Example value                                                   | Description                                                                                                                                                                                                                                                                                                                            |
 |--------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | url_template | `https://{s}.somedomain.com/blabla/{z}/{x}/{y}{r}.png`          | `{s}` means one of the available subdomains (used sequentially to help with browser parallel requests per domain limitation; subdomain values are specified in options; a, b or c by default, can be omitted), `{z}` — zoom level, `{x}` and `{y}` — tile coordinates. `{r}` can be used to add "@2x" to the URL to load retina tiles. |
-| options      | `{'subdomains' : ['a', 'b', 'c'], 'minZoom': 0, 'maxZoom': 18}` | [Leaflet TileLayer](https://leafletjs.com/SlavaUkraini/reference.html#tilelayer) options                                                                                                                                                                                                                                               |
+| options      | `{'subdomains' : ['a', 'b', 'c'], 'minZoom': 0, 'maxZoom': 18}` | [Leaflet TileLayer](https://leafletjs.com/reference.html#tilelayer) options                                                                                                                                                                                                                                                            |
 
 ## Acknowledgements
 - [Leaflet](https://leafletjs.com/)
