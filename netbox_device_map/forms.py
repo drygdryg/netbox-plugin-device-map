@@ -2,7 +2,7 @@ from django import forms
 
 from dcim.models import DeviceRole, Device
 from ipam.models import VLANGroup, VLAN
-from utilities.forms.mixins import BootstrapMixin
+from utilities.forms import BootstrapMixin
 from utilities.forms.fields import DynamicModelChoiceField, DynamicModelMultipleChoiceField
 
 
