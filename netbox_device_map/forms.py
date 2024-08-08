@@ -15,6 +15,7 @@ class DeviceMapFilterForm(BootstrapMixin, forms.Form):
     )
     vlan = DynamicModelChoiceField(
         queryset=VLAN.objects.all(),
+        required=False,
         label="VLAN",
         help_text="Filter devices by VLAN attached to any device interface",
         query_params={"group_id": "$vlan_group"}
